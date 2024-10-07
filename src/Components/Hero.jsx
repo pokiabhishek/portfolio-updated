@@ -1,9 +1,9 @@
 import React from "react";
-import { useTypewriter, Cursor } from "react-simple-typewriter";
+import { useTypewriter } from "react-simple-typewriter";
 import Homeimg1 from "../assets/website.svg";
-import { motion } from "framer-motion";
 import { FaArrowRight } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa6";
+import { motion } from "framer-motion";
 
 const Hero = () => {
   const [text] = useTypewriter({
@@ -13,17 +13,26 @@ const Hero = () => {
     deleteSpeed: 50,
     delaySpeed: 1000,
   });
+
+  const leftContentVariants = {
+    hidden: { opacity: 0, x: -100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
+  const rightImageVariants = {
+    hidden: { opacity: 0, x: 100 },
+    visible: { opacity: 1, x: 0 },
+  };
+
   return (
     <>
-      <div
-        className="flex flex-col md:flex-row gap-7 h-[100vh] md:h-[100vh] items-center  mt-6"
-        id="Home"
-      >
+      <section className="flex flex-col md:flex-row gap-7 min-h-screen items-center mt-6" id="Home">
         <motion.div
-          initial={{ x: -20, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1 }}
-          className="w-full sm-max:mt-[140px]  md:w-1/2 text-center md:text-left"
+          variants={leftContentVariants}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.8, delay: 0.3 }}
+          className="w-full md:w-1/2 text-center md:text-left"
         >
           <h1 className="text-white text-3xl md:text-4xl">
             It's <span className="text-violet-500">me</span>
@@ -42,7 +51,7 @@ const Hero = () => {
           <div className="flex gap-5">
             <a
               href="#Contactus"
-              className="text-black bg-gray-200 w-[35%] py-[15px] rounded-full font-semibold mt-3 flex items-center justify-evenly transform transition-transform duration-300 hover:scale-110 hover:shadow-lg perspective"
+              className="text-black bg-gray-200 w-[35%] py-[15px] rounded-full font-semibold mt-3 flex items-center justify-evenly transform transition-transform duration-300 hover:scale-110 hover:shadow-lg"
             >
               Contact me here!
               <FaArrowRight />
@@ -56,38 +65,17 @@ const Hero = () => {
             </a>
           </div>
         </motion.div>
+
         <motion.div
-          initial={{ x: 40, opacity: 0 }}
-          whileInView={{ x: 0, opacity: 1 }}
-          transition={{ duration: 0.5, delay: 1.2 }}
+          variants={rightImageVariants}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="w-full md:w-1/2 flex justify-center md:justify-end h-[80%] p-9"
         >
-          <img
-            src={Homeimg1}
-            className="w-full h-full object-contain"
-            alt="Home"
-          />
-          {/* <div className="absolute"></div> */}
+          <img src={Homeimg1} className="w-full h-full object-contain" alt="Home" />
         </motion.div>
-      </div>
-      <div className="flex flex-col items-center justify-center  cursor-pointer">
-        <div className="my-8 animate-bounce">
-          <svg
-            stroke="currentColor"
-            fill="currentColor"
-            strokeWidth="0"
-            viewBox="0 0 24 24"
-            className="text-6xl text-white"
-            height="1em"
-            width="1em"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path fill="none" d="M0 0h24v24H0z"></path>
-            <path d="M18 6.41L16.59 5 12 9.58 7.41 5 6 6.41l6 6z"></path>
-            <path d="m18 13-1.41-1.41L12 16.17l-4.59-4.58L6 13l6 6z"></path>
-          </svg>
-        </div>
-      </div>
+      </section>
     </>
   );
 };

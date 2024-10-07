@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import { projectdata } from "../assets/asset";
-// import web3 from "../assets/web3.png";
 import { motion } from "framer-motion";
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import ScrollAnimation from "react-animate-on-scroll";
+import "animate.css/animate.compat.css";
 
 const Project = () => {
-  const [isHoveredIndex, setIsHoveredIndex] = useState(null);
   return (
-    <div className="min-h-screen relative py-6" id="Project">
+    <div className="min-h-screen relative py-6 w-[85%] mx-auto" id="Project">
       <motion.h1
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
@@ -17,74 +17,62 @@ const Project = () => {
         Proje<span className="text-gray-400">ct</span>
       </motion.h1>
 
-      <div className="text-white">
-        <div>
-          {projectdata.map((item, index) => (
-            <div
-              className="flex justify-center gap-10 my-5 py-16 rounded-lg border-2 border-neutral-800"
-              key={index}
-            >
-              <span data-aos="zoom-in-right">
-                <div
-                  className="relative rounded-md w-[400px] h-[300px] overflow-hidden"
-                  style={{
-                    backgroundImage: `url(${item.img})`,
-                    backgroundPosition:
-                      isHoveredIndex === index ? "bottom" : "top",
-                    backgroundSize: "cover",
-                    transition: "background-position 6s linear",
-                  }}
-                  onMouseEnter={() => setIsHoveredIndex(index)}
-                  onMouseLeave={() => setIsHoveredIndex(null)}
-                >
-                  {/* Overlay */}
-                  {isHoveredIndex === index && (
-                    <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-70 transition-opacity duration-300 ease-in-out">
-                      <a
-                        href={item.link}
-                        className="text-white text-lg font-bold mb-2 border-2 p-2 rounded-md transition-transform duration-300 ease-in-out transform hover:scale-105"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        Live Demo
-                      </a>
-                      <a
-                        href={item.git}
-                        className="flex items-center text-white text-2xl transition-transform duration-300 ease-in-out transform hover:scale-105"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <FaGithub className="mr-2" />
-                      </a>
-                    </div>
-                  )}
-                </div>
-              </span>
-              <motion.span
-                initial={{ x: 120, opacity: 0 }}
-                whileInView={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.7, delay: 1 }}
-                className="w-1/2"
+      <div className="text-white grid grid-cols-1 sm:grid-cols-2 gap-10">
+        {projectdata.map((item, index) => (
+          <ScrollAnimation
+            animateIn="flipInX"
+            className="flex flex-col gap-5 p-7 rounded-lg bg-[#21232d] border border-[#ffffff4d]"
+            key={index}
+          >
+            <span>
+              <div
+                className="relative rounded-md w-full h-[200px]"
+                style={{
+                  backgroundImage: `url(${item.img})`,
+                  backgroundPosition: "top",
+                  backgroundSize: "cover",
+                  transition: "background-position 6s linear",
+                }}
               >
-                <h1 className="text-4xl font-semibold py-5">{item.name}</h1>
-                <p className="text-gray-300 text-xl">{item.content}</p>
-                <div className="flex  h-[14vh] items-end">
-                <div className="w-[55%] flex justify-between">
-                  {item.languages.map((language, langIndex) => (
-                    <span
-                      key={langIndex}
-                      className="border-[1px] px-7 py-2 rounded-md border-gray-700"
-                    >
-                      {language}
-                    </span>
-                  ))}
-                </div>
-                </div>
-               
-              </motion.span>
+                <div className="absolute inset-0 flex flex-col items-center justify-center bg-black bg-opacity-30 transition-opacity duration-300 ease-in-out"></div>
+              </div>
+            </span>
+            <span className="flex-grow">
+              <h1 className="text-4xl font-semibold py-5">{item.name}</h1>
+              <p className="text-gray-400 text-sm">{item.content}</p>
+            </span>
+            <div className="flex h-[14vh] items-end justify-between">
+              <div className="flex flex-wrap gap-2">
+                {item.languages.map((language, langIndex) => (
+                  <span
+                    key={langIndex}
+                    className="border border-gray-600 px-3 py-1 rounded-md"
+                  >
+                    {language}
+                  </span>
+                ))}
+              </div>
+              <div className="flex justify-end gap-5 pt-3">
+                <a
+                  href={item.link}
+                  className="text-white text-lg font-bold border border-[#ffffff4d] p-3 rounded-full"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaExternalLinkAlt />
+                </a>
+                <a
+                  href={item.git}
+                  className="flex items-center text-white text-4xl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <FaGithub className="mr-2" />
+                </a>
+              </div>
             </div>
-          ))}
-        </div>
+          </ScrollAnimation>
+        ))}
       </div>
     </div>
   );

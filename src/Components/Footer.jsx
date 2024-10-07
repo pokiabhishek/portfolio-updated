@@ -5,8 +5,8 @@ import { FaLinkedin } from "react-icons/fa6";
 import {motion} from "framer-motion"
 const Footer = () => {
   return (
-    <footer className= 'text-white py-9' id='Contactus'>
-    <div className="relative border-[1px] border-slate-800 rounded-lg">
+    <footer className= 'text-white py-9'>
+    <div className="relative border-[1px] border-slate-800 rounded-lg" id='Contactus'>
           <motion.h1
                  initial={{y:-40,opacity:0}}
                  whileInView={{y:0,opacity:1}}

@@ -8,3 +8,11 @@
 .nav-link.active {
   color: red; /* Change to red for active section */
 }
+
+html {
+  --cursor-color: #ddd
+}
+
+html.dark-mode {
+  --cursor-color: #fff
+}

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion"; // Import motion
+import { MdOutlineDarkMode } from "react-icons/md";
 
 const sections = ["Home", "About", "Education", "Project", "Contactus"];
 
@@ -59,7 +60,7 @@ const Navbar = () => {
       }}
     >
       <nav
-        className="flex h-[60px] items-center xl:px-6 sm:px-[20px] w-[80%] mx-auto"
+        className="flex h-[60px] items-center  sm:px-[20px] lg:px-[0px] w-[80%] mx-auto "
         style={{ fontFamily: "Poppins, sans-serif" }}
       >
         <h1
@@ -110,14 +111,14 @@ const Navbar = () => {
           )}
         </button>
         <ul
-  className={`xl-max:absolute top-[60px] ms-auto xl-max:flex-col right-0 left-0 text-center xl:flex gap-2 ${
-    toggleMenu ? "flex" : "hidden"
-  }`}
-  style={{
-    backgroundColor: toggleMenu ? 'rgb(29, 29, 29)' : 'transparent',
-    borderRadius: toggleMenu ? '0.75rem' : '0',
-  }}
->
+          className={`xl-max:absolute top-[60px] ms-auto xl-max:flex-col right-0 left-0 text-center xl:flex gap-2 ${
+            toggleMenu ? "flex" : "hidden"
+          }`}
+          style={{
+            backgroundColor: toggleMenu ? "rgb(29, 29, 29)" : "transparent",
+            borderRadius: toggleMenu ? "0.75rem" : "0",
+          }}
+        > 
           {sections.map((item) => (
             <li className="list-none relative" key={item}>
               <a
@@ -150,6 +151,7 @@ const Navbar = () => {
             </li>
           ))}
         </ul>
+        {/* <MdOutlineDarkMode  className="text-white text-3xl mx-2"/> */}
       </nav>
     </div>
   );

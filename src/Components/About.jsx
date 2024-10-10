@@ -3,9 +3,15 @@ import React from "react";
 import { motion } from "framer-motion";
 import ScrollAnimation from "react-animate-on-scroll";
 import "animate.css/animate.compat.css";
-import { FaReact, FaHtml5, FaCss3Alt, FaJs, FaCuttlefish } from 'react-icons/fa';
-import { SiTailwindcss } from 'react-icons/si';
-import { AiFillThunderbolt } from 'react-icons/ai';
+import {
+  FaReact,
+  FaHtml5,
+  FaCss3Alt,
+  FaJs,
+  FaCuttlefish,
+} from "react-icons/fa";
+import { SiTailwindcss } from "react-icons/si";
+import { AiFillThunderbolt } from "react-icons/ai";
 
 const About = () => {
   return (
@@ -18,7 +24,8 @@ const About = () => {
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 1 }}
-        className="text-[#d7d0f1] text-4xl sm:text-5xl md:text-6xl py-12 text-center uppercase" style={{color:"rgb(252, 16, 86)"}}
+        className="text-[#d7d0f1] text-4xl sm:text-5xl md:text-6xl py-12 text-center uppercase"
+        style={{ color: "rgb(252, 16, 86)" }}
       >
         About <span className="text-white">Us</span>
       </motion.h1>
@@ -275,26 +282,63 @@ const About = () => {
 
         <div className="flex z-30 flex-col md:w-1/2 p-4">
           <ScrollAnimation animateIn="bounceInRight" duration={1.7} delay={300}>
-          <div className="grid grid-cols-5 md:grid-cols-6 gap-3 py-4">
-              <FaReact className="text-blue-500 text-4xl w-[50%] md:text-5xl md:w-full"/> 
-              <FaHtml5 className="text-orange-600 text-4xl w-[50%] md:text-5xl  md:w-full"/>
-              <FaCss3Alt className="text-blue-400 text-4xl  w-[50%] md:text-5xl  md:w-full"/>
-              <FaJs className="text-yellow-500 text-4xl w-[50%] md:text-5xl  md:w-full"/>
-              <SiTailwindcss className="text-cyan-500 text-4xl w-[50%] md:text-5xl  md:w-full"/>
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3 py-4">
+              <div className="flex justify-center items-center">
+                <FaReact className="text-blue-500 text-7xl" />
+              </div>
+              <div className="flex justify-center items-center">
+                <FaHtml5 className="text-orange-600 text-7xl" />
+              </div>
+              <div className="flex justify-center items-center">
+                <FaCss3Alt className="text-blue-400 text-7xl" />
+              </div>
+              <div className="flex justify-center items-center">
+                <FaJs className="text-yellow-500 text-7xl" />
+              </div>
+              <div className="flex justify-center items-center">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true"
+                  focusable="false"
+                  className="text-4xl"
+                  style={{
+                    transform: "rotate(360deg)",
+                    color: "rgb(233, 78, 50)",
+                  }}
+                  preserveAspectRatio="xMidYMid meet"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fill="currentColor"
+                    d="M22.394 6c-.167-.29-.398-.543-.652-.69L12.926.22c-.509-.294-1.34-.294-1.848 0L2.26 5.31c-.508.293-.923 1.013-.923 1.6v10.18c0 .294.104.62.271.91s.398.543.652.69l8.816 5.09c.508.293 1.34.293 1.848 0l8.816-5.09c.254-.147.485-.4.652-.69s.27-.616.27-.91V6.91c.003-.294-.1-.62-.268-.91M12 19.11c-3.92 0-7.109-3.19-7.109-7.11s3.19-7.11 7.11-7.11a7.13 7.13 0 0 1 6.156 3.553l-3.076 1.78a3.57 3.57 0 0 0-3.08-1.78A3.56 3.56 0 0 0 8.444 12A3.56 3.56 0 0 0 12 15.555a3.57 3.57 0 0 0 3.08-1.778l3.078 1.78A7.14 7.14 0 0 1 12 19.11m7.11-6.715h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79zm2.962 0h-.79v.79h-.79v-.79h-.79v-.79h.79v-.79h.79v.79h.79z"
+                  />
+                </svg>
+              </div>
+              <div className="flex justify-center items-center">
+                <SiTailwindcss className="text-cyan-500 text-7xl" />
+              </div>
             </div>
-            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-wider">
-              ⚡ I'm a React.js Developer passionate about creating dynamic web
-              applications and intuitive user interfaces.
+
+            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-2xl">⚡</span> React.js Developer passionate
+              about dynamic web applications and intuitive UIs.
             </p>
-            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-wider">
-              ⚡ Proficient in HTML, CSS, and JavaScript, I also have experience
-              in C++, enhancing my understanding of programming concepts.
+            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-2xl">⚡</span> Proficient in HTML, CSS, and
+              JavaScript, with experience in C++.
             </p>
-            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-wider">
-              ⚡ Always eager to learn, I stay updated with new technologies and
-              industry trends.
+            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-2xl">⚡</span> Always excited to learn new tools and follow trends.
             </p>
-           
+            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-2xl">⚡</span> Strong problem-solving
+              skills, focused on delivering efficient and effective solutions.
+            </p>
+            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-2xl">⚡</span> Committed to writing clean,
+              maintainable code and following best practices.
+            </p>
+
             {/* <AiFillThunderbolt className="text-yellow-400" />  */}
           </ScrollAnimation>
         </div>

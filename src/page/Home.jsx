@@ -11,9 +11,9 @@ const Home = () => {
     <>
       <Hero/>
       <About/>
+      <Timeline/>
       <Project/>
       <Skills/>
-      <Timeline/>
       <Services/>
     </>
   )

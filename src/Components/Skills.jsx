@@ -1,87 +1,101 @@
-import React, { useEffect, useRef, useState } from 'react';
-import { useSpring, animated } from 'react-spring';
-import menimg from "../assets/man01.svg";
+import React, { useState, useEffect } from 'react';
+import { FaReact, FaTools, FaRegLightbulb } from 'react-icons/fa';
 import ScrollAnimation from "react-animate-on-scroll";
 import "animate.css/animate.compat.css";
 
-const Skills = () => {
-    const skills = [
-        { name: "C++", percentage: 75 },
-        { name: "HTML", percentage: 95 },
-        { name: "CSS", percentage: 80 },
-        { name: "JavaScript", percentage: 60 },
-        { name: "React.js", percentage: 70 },
-    ];
+const technicalData = [
+  {
+    title: "Frontend",
+    icon: <FaReact className="text-3xl text-blue-300" />,
+    skills: [
+      { skill: "HTML5", percentage: "80%" },
+      { skill: "CSS3", percentage: "90%" },
+      { skill: "JavaScript", percentage: "75%" },
+      { skill: "React.js", percentage: "80%" },
+    ],
+  },
+  {
+    title: "Tools",
+    icon: <FaTools className="text-3xl text-red-500" />,
+    skills: [
+      { skill: "Visual Studio Code", percentage: "75%" },
+      { skill: "Responsive Layout", percentage: "80%" },
+    ],
+  },
+  {
+    title: "Soft Skills",
+    icon: <FaRegLightbulb className="text-3xl text-yellow-300" />,
+    skills: [
+      { skill: "Problem-solving", percentage: "80%" },
+      { skill: "Attention to Detail", percentage: "75%" },
+    ],
+  },
+];
 
-    const [isVisible, setIsVisible] = useState(false);
-    const skillsRef = useRef(null);
+const TechnicalProficiency = () => {
+  const [currentSkills, setCurrentSkills] = useState(technicalData[0].skills);
+  const [currentTitle, setCurrentTitle] = useState(technicalData[0].title);
+
+  const renderSkills = (title, skills) => {
+    setCurrentTitle(title);
+    setCurrentSkills(skills);
     
-    const fadeIn = useSpring({
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translateY(0)' : 'translateY(20px)',
-        config: { duration: 500 },
+    setTimeout(() => {
+      const progressBars = document.querySelectorAll('.skill-progress');
+      skills.forEach(({ percentage }, index) => {
+        progressBars[index].style.width = percentage;
+      });
+    }, 100);
+  };
+
+  useEffect(() => {
+    const progressBars = document.querySelectorAll('.skill-progress');
+    currentSkills.forEach(({ percentage }, index) => {
+      progressBars[index].style.width = percentage; 
     });
+  }, []); 
 
-    useEffect(() => {
-        const observer = new IntersectionObserver((entries) => {
-            if (entries[0].isIntersecting) {
-                setIsVisible(true);
-                observer.disconnect();
-            }
-        });
-
-        if (skillsRef.current) {
-            observer.observe(skillsRef.current);
-        }
-
-        return () => {
-            if (skillsRef.current) {
-                observer.unobserve(skillsRef.current);
-            }
-        };
-    }, []);
-
-    return (
-        <div ref={skillsRef} className='h-[100vh] flex flex-col lg:flex-row justify-center items-center min-h-screen' id='Skills'>
-            <div className="w-full lg:w-1/2 flex flex-col justify-center">
-                <h1 className='text-white text-5xl text-center font-semibold mb-10'>
-                    My Sk<span className='text-gray-400'>ills</span>
-                </h1>
-                <div className="w-[80%] mx-auto">
-                    {skills.map((skill, index) => {
-                        const { width } = useSpring({
-                            width: isVisible ? `${skill.percentage}%` : '0%',
-                            config: { duration: 1000 },
-                        });
-
-                        return (
-                            <div className="mb-4" key={index}>
-                                <span className="block text-gray-300 font-semibold mb-1">{skill.name}</span>
-                                <div className="w-full bg-gray-600 rounded-full h-4 relative">
-                                    <animated.div
-                                        style={{
-                                            width,
-                                            backgroundColor: 'rgba(255, 165, 0, 0.8)',
-                                        }}
-                                        className="h-4 rounded-full"
-                                    >
-                                        <span className="absolute right-[-30px] text-xs text-white">{skill.percentage}%</span>
-                                    </animated.div>
-                                </div>
-                            </div>
-                        );
-                    })}
-                </div>
-            </div>
-            <ScrollAnimation animateIn="bounceInRight" duration={1} delay={500} className="w-full lg:w-1/3 flex flex-col justify-center items-center mt-10 lg:mt-0">
-                <img src={menimg} alt="Skills Illustration" className="w-3/4 h-auto" />
-                {/* <p className="text-gray-300 text-center px-4">
-                    I'm passionate about building efficient and scalable web applications. I enjoy working with modern technologies and continuously improving my skills through challenging projects.
-                </p> */}
-            </ScrollAnimation>
+  return (
+    <section className="Technical-proficiency w-full md:w-[80%] mx-auto md:h-[100vh] grid grid-cols-1 md:grid-cols-2 gap-5 py-8">
+      <ScrollAnimation animateIn="fadeInLeft">
+        <h4 className="mb-4 text-4xl font-semibold text-left" style={{ color: "rgb(252, 16, 86)" }}>
+          Technical <span className='text-white'>Proficiency</span>
+        </h4>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-7 pt-10">
+          {technicalData.map(({ title, icon, skills }) => (
+            <button
+              key={title}
+              className="main-div flex items-center justify-center p-5 h-30 relative text-white border-[1px] border-gray-500 rounded-lg transition-all duration-400 transform hover:-translate-y-1"
+              style={{ backgroundColor: "rgb(41, 42, 45)" }}
+              onClick={() => renderSkills(title, skills)}
+            >
+              <div className="icon1 absolute top-[-20px] left-[20px] bg-[#212121] rounded-md border-[1px] border-gray-400 p-2 transition-transform duration-400 hover:translate-y-[-1rem]">
+                {icon}
+              </div>
+              <h4 className="text-lg md:text-xl">{title}</h4>
+            </button>
+          ))}
         </div>
-    );
+      </ScrollAnimation>
+      <ScrollAnimation animateIn="fadeInRight" className="Technical-proficiency-data min-h-[20rem] md:min-h-[23rem] border border-gray-600 rounded-lg p-4" style={{ backgroundColor: "rgb(41, 42, 45)" }}>
+        <h5 className="h5 text-2xl font-semibold rounded-t-lg py-2 bg-clip-text border-b border-gray-600 text-center" style={{ color: "rgb(252, 16, 86)" }}>
+          {currentTitle}
+        </h5>
+        {currentSkills.map(({ skill, percentage }) => (
+          <div key={skill} className="skill-info flex items-center justify-between mb-4 relative">
+            <p className="text-white font-medium mt-10">{skill}</p>
+            <p className="percentage text-white mt-10">{percentage}</p>
+            <div className="skill-progress-bg w-full h-[0.5rem] bg-slate-950 rounded-md overflow-hidden absolute top-20">
+              <div
+                className="skill-progress h-full transition-all duration-500 rounded-full"
+                style={{ width: '0%', backgroundColor: "rgb(252, 16, 86)" }} 
+              ></div>
+            </div>
+          </div>
+        ))}
+      </ScrollAnimation>
+    </section>
+  );
 };
 
-export default Skills;
-
+export default TechnicalProficiency;

@@ -31,7 +31,7 @@ const About = () => {
       </motion.h1>
       <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-5">
         <ScrollAnimation animateIn="bounceInLeft" duration={1.6} delay={300}>
-          <div className="w-[400px]">
+          <div className=" md:w-[400px]">
             <svg
               id="ade8c9af-7e2e-4eda-b5c8-b06129257226"
               width="100%"
@@ -282,27 +282,28 @@ const About = () => {
 
         <div className="flex z-30 flex-col md:w-1/2 p-4">
           <ScrollAnimation animateIn="bounceInRight" duration={1.7} delay={300}>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-6 gap-3 py-4">
+          <div className="grid grid-cols-6 sm:grid-cols-6 md:grid-cols-5 lg:grid-cols-6 gap-3 py-4">
+
               <div className="flex justify-center items-center">
-                <FaReact className="text-blue-500 text-7xl" />
+                <FaReact className="text-blue-500 text-4xl md:text-7xl" />
               </div>
               <div className="flex justify-center items-center">
-                <FaHtml5 className="text-orange-600 text-7xl" />
+                <FaHtml5 className="text-orange-600 text-4xl md:text-7xl" />
               </div>
               <div className="flex justify-center items-center">
-                <FaCss3Alt className="text-blue-400 text-7xl" />
+                <FaCss3Alt className="text-blue-400 text-4xl md:text-7xl" />
               </div>
               <div className="flex justify-center items-center">
-                <FaJs className="text-yellow-500 text-7xl" />
+                <FaJs className="text-yellow-500 text-4xl md:text-7xl" />
               </div>
               <div className="flex justify-center items-center">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   aria-hidden="true"
                   focusable="false"
-                  className="text-4xl"
+                  className="p-1 md:text-4xl"
                   style={{
-                    transform: "rotate(360deg)",
+                    transform: "rotate(360deg)",  
                     color: "rgb(233, 78, 50)",
                   }}
                   preserveAspectRatio="xMidYMid meet"
@@ -319,23 +320,23 @@ const About = () => {
               </div>
             </div>
 
-            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
-              <span className="text-2xl">⚡</span> React.js Developer passionate
+            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-sm md:text-2xl">⚡</span> React.js Developer passionate
               about dynamic web applications and intuitive UIs.
             </p>
-            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
-              <span className="text-2xl">⚡</span> Proficient in HTML, CSS, and
+            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-sm md:text-2xl">⚡</span> Proficient in HTML, CSS, and
               JavaScript, with experience in C++.
             </p>
-            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
-              <span className="text-2xl">⚡</span> Always excited to learn new tools and follow trends.
+            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-sm md:text-2xl">⚡</span> Always excited to learn new tools and follow trends.
             </p>
-            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
-              <span className="text-2xl">⚡</span> Strong problem-solving
+            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-sm md:text-2xl">⚡</span> Strong problem-solving
               skills, focused on delivering efficient and effective solutions.
             </p>
-            <p className="text-lg text-gray-200 leading-8 mb-4 tracking-widest">
-              <span className="text-2xl">⚡</span> Committed to writing clean,
+            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+              <span className="text-sm md:text-2xl">⚡</span> Committed to writing clean,
               maintainable code and following best practices.
             </p>
 

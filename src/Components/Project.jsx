@@ -343,14 +343,14 @@ const Project = () => {
           >
             <span className="flex-grow">
               <h1 className="text-4xl font-semibold py-5">{item.name}</h1>
-              <p className="text-gray-400 text-xl">{item.content}</p>
+              <p className="text-gray-400 text-sm md:text-xl">{item.content}</p>
             </span>
             <div className="flex h-[14vh] items-end justify-between">
-              <div className="flex flex-wrap gap-2">
+              <div className="flex flex-wrap  gap-2">
                 {item.languages.map((language, langIndex) => (
                   <span
                     key={langIndex}
-                    className="flex items-center px-3 py-1 rounded-md text-[30px]"
+                    className="flex items-center p-0 md:px-3 md:py-1 text-2xl md:text-[30px]"
                   >
                     {languageIcons[language]}{" "}
                     {/* Render the corresponding icon */}

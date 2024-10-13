@@ -32,7 +32,7 @@ export const projectdata = [
         direct: "Go live",
         img: web1,
         git: "https://github.com/pokiabhishek/lifecoach",
-        link: "https://lifecoach-glnp2e0lz-pokiabhisheks-projects.vercel.app"
+        link: "https://lifecoaching007.netlify.app/"
     },
     {
         name: "Food ordering platform",

@@ -1,5 +1,6 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { FaReact, FaTools, FaRegLightbulb } from 'react-icons/fa';
+import { motion } from 'framer-motion';
 import ScrollAnimation from "react-animate-on-scroll";
 import "animate.css/animate.compat.css";
 
@@ -39,21 +40,7 @@ const TechnicalProficiency = () => {
   const renderSkills = (title, skills) => {
     setCurrentTitle(title);
     setCurrentSkills(skills);
-    
-    setTimeout(() => {
-      const progressBars = document.querySelectorAll('.skill-progress');
-      skills.forEach(({ percentage }, index) => {
-        progressBars[index].style.width = percentage;
-      });
-    }, 100);
   };
-
-  useEffect(() => {
-    const progressBars = document.querySelectorAll('.skill-progress');
-    currentSkills.forEach(({ percentage }, index) => {
-      progressBars[index].style.width = percentage; 
-    });
-  }, []); 
 
   return (
     <section className="Technical-proficiency w-full md:w-[80%] mx-auto md:h-[100vh] grid grid-cols-1 md:grid-cols-2 gap-5 py-8">
@@ -81,15 +68,19 @@ const TechnicalProficiency = () => {
         <h5 className="h5 text-2xl font-semibold rounded-t-lg py-2 bg-clip-text border-b border-gray-600 text-center" style={{ color: "rgb(252, 16, 86)" }}>
           {currentTitle}
         </h5>
-        {currentSkills.map(({ skill, percentage }) => (
+        {currentSkills.map(({ skill, percentage }, index) => (
           <div key={skill} className="skill-info flex items-center justify-between mb-4 relative">
             <p className="text-white font-medium mt-10">{skill}</p>
             <p className="percentage text-white mt-10">{percentage}</p>
             <div className="skill-progress-bg w-full h-[0.5rem] bg-slate-950 rounded-md overflow-hidden absolute top-20">
-              <div
-                className="skill-progress h-full transition-all duration-500 rounded-full"
-                style={{ width: '0%', backgroundColor: "rgb(252, 16, 86)" }} 
-              ></div>
+              <motion.div
+                className="skill-progress h-full rounded-full"
+                initial={{ width: '0%' }}
+                whileInView={{ width: percentage }}
+                transition={{ duration: 0.8 }}
+                style={{ backgroundColor: "rgb(252, 16, 86)" }}
+                // viewport={{ once: true }} // This will make sure the animation happens only once
+              />
             </div>
           </div>
         ))}

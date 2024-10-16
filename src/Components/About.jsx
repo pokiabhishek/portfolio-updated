@@ -30,7 +30,7 @@ const About = () => {
         About <span className="text-white">Us</span>
       </motion.h1>
       <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left gap-5">
-        <ScrollAnimation animateIn="bounceInLeft" duration={1.6} delay={300}>
+        <ScrollAnimation animateIn="bounceInLeft" duration={2.5} delay={100}>
           <div className=" md:w-[400px]">
             <svg
               id="ade8c9af-7e2e-4eda-b5c8-b06129257226"
@@ -281,7 +281,7 @@ const About = () => {
         </ScrollAnimation>
 
         <div className="flex z-30 flex-col md:w-1/2 p-4">
-          <ScrollAnimation animateIn="bounceInRight" duration={1.7} delay={300}>
+          <ScrollAnimation animateIn="bounceInRight" duration={2.3} delay={200}>
           <div className="grid grid-cols-6 sm:grid-cols-6 md:grid-cols-5 lg:grid-cols-6 gap-3 py-4">
 
               <div className="flex justify-center items-center">
@@ -320,25 +320,25 @@ const About = () => {
               </div>
             </div>
 
-            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+            <p className="text-sm text-left md:text-lg text-gray-400 leading-8 mb-4 tracking-widest">
               <span className="text-sm md:text-2xl">⚡</span> React.js Developer passionate
               about dynamic web applications and intuitive UIs.
             </p>
-            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+            <p className="text-sm text-left md:text-lg text-gray-400 leading-8 mb-4 tracking-widest">
               <span className="text-sm md:text-2xl">⚡</span> Proficient in HTML, CSS, and
               JavaScript, with experience in C++.
             </p>
-            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+            <p className="text-sm text-left md:text-lg text-gray-400 leading-8 mb-4 tracking-widest">
               <span className="text-sm md:text-2xl">⚡</span> Always excited to learn new tools and follow trends.
             </p>
-            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+            {/* <p className="text-sm text-left md:text-lg text-gray-400 leading-8 mb-4 tracking-widest">
               <span className="text-sm md:text-2xl">⚡</span> Strong problem-solving
               skills, focused on delivering efficient and effective solutions.
             </p>
-            <p className="text-sm text-left md:text-lg text-gray-200 leading-8 mb-4 tracking-widest">
+            <p className="text-sm text-left md:text-lg text-gray-400 leading-8 mb-4 tracking-widest">
               <span className="text-sm md:text-2xl">⚡</span> Committed to writing clean,
               maintainable code and following best practices.
-            </p>
+            </p> */}
 
             {/* <AiFillThunderbolt className="text-yellow-400" />  */}
           </ScrollAnimation>

@@ -12,7 +12,7 @@ import ScrollAnimation from "react-animate-on-scroll";
 const Timeline = () => {
   return (
     <div className="Timeline w-[80%] mx-auto" id="Education">
-      <div className="flex flex-col md:flex-row justify-between items-center">
+      <div className="flex flex-col md:flex-row  gap-20">
         <div data-aos="fade-down" className="text-center md:text-left">
           <h1
             className="text-5xl md:text-7xl"
@@ -26,9 +26,8 @@ const Timeline = () => {
         </div>
         <ScrollAnimation
           animateIn="bounceInRight"
-          duration={1.5}
-          delay={300}
-          className=" w-[50%] h-[50vh]"
+          duration={2.5} delay={100}
+          className="md:w-[70%] h-[50vh] ms-auto"
         >
           <svg
             id="eb113788-f1f1-4c1f-be62-f1d0ea2e1eb6"
@@ -305,50 +304,96 @@ const Timeline = () => {
       <VerticalTimeline lineColor="#212121">
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          iconStyle={{ background: "#000", color: "#fff" }}
+          iconStyle={{ background: "rgb(252, 16, 86)", color: "white" }}
+          contentStyle={{ background: "white" }}
+          intersectionObserverProps={{
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.1,
+          }}
           icon={<FaGraduationCap />}
-          date={<span style={{ color: "#fff" }}>2017 - 2018</span>}
+          date={<span style={{ color: "#ced4da" }}>2017 - 2018</span>}
         >
-          <ScrollAnimation animateIn="bounceInLeft" duration={1.8} delay={200}>
-            <h3 className="vertical-timeline-element-title">10th Grade</h3>
-            <h1 className="text-2xl font-semibold">Yeshodham High School</h1>
-            <h1 className="font-bold text-right text-xl">81%</h1>
-          </ScrollAnimation>
+          {/* <ScrollAnimation animateIn="bounceInLeft" duration={1.8} delay={200}> */}
+          <h3
+            className="vertical-timeline-element-title text-gray-900 font-semibold tracking-widest"
+            style={{ color: "rgb(252, 16, 86)" }}
+          >
+            10th <span className="text-slate-950">Grade</span>
+          </h3>
+          <h1
+            className="text-[22px] font-semibold tracking-tight"
+            
+          >
+            Yeshodham High School
+          </h1>
+          <h1 className="text-right text-xl text-gray-900 font-semibold tracking-widest">
+            81%
+          </h1>
+          {/* </ScrollAnimation> */}
         </VerticalTimelineElement>
 
         <VerticalTimelineElement
           className="vertical-timeline-element--education"
-          iconStyle={{ background: "#000", color: "#fff" }}
+          iconStyle={{ background: "rgb(252, 16, 86)", color: "white" }}
+          contentStyle={{ background: "white" }}
+          intersectionObserverProps={{
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.1,
+          }}
           icon={<FaGraduationCap />}
-          date={<span style={{ color: "#fff" }}>2018 - 2020</span>}
+          date={<span style={{ color: "#ced4da" }}>2018 - 2020</span>}
         >
-          <ScrollAnimation animateIn="bounceInRight" duration={1.8} delay={200}>
-            <div className="flex flex-col items-end">
-              <h3 className="vertical-timeline-element-title">12th Grade</h3>
-              <h1 className="text-2xl font-semibold">
-                Duraga Devi Saraf College
-              </h1>
-              <p>Science</p>
-              <h1 className="font-bold text-xl">47%</h1>
-            </div>
-          </ScrollAnimation>
-        </VerticalTimelineElement>
-
-        <VerticalTimelineElement
-          className="vertical-timeline-element--education"
-          iconStyle={{ background: "#000", color: "#fff" }}
-          icon={<FaGraduationCap />}
-          date={<span style={{ color: "#fff" }}>2021 - 2023</span>}
-        >
-          <ScrollAnimation animateIn="bounceInLeft" duration={1.8} delay={200}>
-            <h3 className="vertical-timeline-element-title">
-              B.Sc. Computer Science
+          {/* <ScrollAnimation animateIn="bounceInRight" duration={1.8} delay={200}> */}
+          <div className="flex flex-col items-start">
+            <h3
+              className="vertical-timeline-element-title font-semibold tracking-widest"
+              style={{ color: "rgb(252, 16, 86)" }}
+            >
+              12th <span className="text-slate-950">Grade</span>
             </h3>
-            <h1 className="text-2xl font-semibold">
-              Nirmala Memorial Foundation College
+            <h1 className="text-[22px] font-semibold tracking-tight">
+              Duraga Devi Saraf College
             </h1>
-            <h1 className="font-bold text-right text-xl">73%</h1>
-          </ScrollAnimation>
+            <p
+              className=" text-gray-900 font-semibold tracking-widest"
+              style={{ color: "rgb(252, 16, 86)" }}
+            >
+              Scie<span className="text-slate-950">nce</span>{" "}
+            </p>
+            <h1 className="text-xl  text-gray-900 font-semibold tracking-widest text-right">
+              47%
+            </h1>
+          </div>
+          {/* </ScrollAnimation> */}
+        </VerticalTimelineElement>
+
+        <VerticalTimelineElement
+          className="vertical-timeline-element--education"
+          iconStyle={{ background: "rgb(252, 16, 86)", color: "white" }}
+          // style={{backgroundColor:"#f0f0f0"}}
+          contentStyle={{ background: "white" }}
+          intersectionObserverProps={{
+            root: null,
+            rootMargin: "0px",
+            threshold: 0.1,
+          }}
+          icon={<FaGraduationCap />}
+          date={<span style={{ color: "#ced4da" }}>2021 - 2023</span>}
+        >
+          {/* <ScrollAnimation animateIn="bounceInLeft" duration={1.8} delay={200}> */}
+          <h3
+            className="vertical-timeline-element-title font-semibold tracking-widest"
+            style={{ color: "rgb(252, 16, 86)" }}
+          >
+            BSc. <span className="text-slate-950">Computer Science</span>
+          </h3>
+          <h1 className="text-[22px] font-semibold tracking-tight text-gray-950">
+            Nirmala Memorial Foundation College
+          </h1>
+          <h1 className="font-bold text-right text-xl">73%</h1>
+          {/* </ScrollAnimation> */}
         </VerticalTimelineElement>
       </VerticalTimeline>
     </div>

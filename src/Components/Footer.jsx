@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const Footer = () => {
   return (
     <footer className='text-white'>
-      <div className="relative border-[1px] border-slate-800 rounded-lg flex flex-col items-center overflow-hidden" id='Contactus'>
+      <div className="relative border-b-[1px] border-slate-800 rounded-lg flex flex-col items-center overflow-hidden" id='Contactus'>
         <motion.h1
           initial={{ y: -40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
@@ -21,7 +21,7 @@ const Footer = () => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className="text-white bg-slate-500 px-6 py-2 rounded-full font-semibold text-center mt-4 w-[15%]">
+          className="text-white bg-slate-500 px-6 py-2 rounded-full font-semibold text-center mt-4 md:w-[15%]">
           Hire Me!
         </motion.div>
 
@@ -29,7 +29,7 @@ const Footer = () => {
           initial={{ y: 20, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 1 }}
-          className='block text-xl text-center mt-4 tracking-widest'>
+          className='block  text-sm md:text-xl text-center mt-4 tracking-widest'>
           Abhishekpokharkar81@gmail.com
         </motion.span>
 

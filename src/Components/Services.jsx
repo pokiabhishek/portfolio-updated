@@ -53,7 +53,7 @@ const PrevArrow = ({ onClick }) => (
 
 const Services = () => {
   const settings = {
-    dots: true,
+    dots: false,
     infinite: true,
     speed: 500,
     slidesToShow: 1,
@@ -93,7 +93,7 @@ const Services = () => {
         initial={{ y: 40, opacity: 0 }}
         whileInView={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.5, delay: 1 }}
-        className="text-[#d7d0f1] text-5xl py-20 text-center uppercase font-semibold"
+        className="text-[#d7d0f1] text-3xl md:text-5xl py-20 text-center uppercase font-semibold"
         style={{ color: "rgb(252, 16, 86)" }}
       >
         How We <span className="text-white">Can Help</span>
@@ -111,10 +111,10 @@ const Services = () => {
             >
               <div className="flex flex-col items-center">
                 {item.icon}
-                <h1 className="text-[35px] font-semibold pl-2">{item.name}</h1>
+                <h1 className="text-2xl md:text-[35px] font-semibold pl-2">{item.name}</h1>
               </div>
               <div className="pt-[50px]">
-                <p className="text-gray-400 text-[18px]">{item.content}</p>
+                <p className="text-gray-400 text-sm md:text-[18px]">{item.content}</p>
               </div>
             </div>
           ))}
